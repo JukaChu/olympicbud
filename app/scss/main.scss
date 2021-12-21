@@ -19,12 +19,7 @@ $green: #D7FA00;
 
 $light-c7: #c7c7c7;
 body, html {
-  margin: 0;
-  width: 100%;
-  min-width: 320px;
-  //overflow-x: hidden;
-  //background: $black;
-  //scroll-behavior: smooth;
+
   &.no-scroll {
     overflow: hidden;
   }
@@ -32,8 +27,7 @@ body, html {
 }
 
 body {
-  //overflow-x: hidden;
-  max-width: 100%;
+
 
   &.fixed {
     position: fixed;
@@ -43,10 +37,7 @@ body {
   }
 }
 
-* {
-  letter-spacing: 0;
-  //font-family: $main-font;
-}
+
 
 
 input[type="search"]::-webkit-search-decoration,
@@ -56,6 +47,33 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
+
+img.lazyload, video.lazyload {
+  opacity: 0;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+
+.is-loaded {
+  opacity: 0;
+  visibility: visible;
+  //transition: opacity 0.3s ease, visibility 0.3s ease;
+  animation: faddingImgAnim 0.5s ease;
+}
+
+
+@keyframes faddingImgAnim {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
 
 
 
@@ -101,25 +119,6 @@ input[type="search"]::-webkit-search-results-decoration {
     }
   }
 }
-body {
-  //display: flex;
-  //flex-direction: column;
-  //min-height: 100%;
-  //flex-grow: 1;
-
-  &.no-scroll {
-    overflow: hidden;
-  }
-}
-
-
-html {
-  height: auto;
-  min-height: 100%;
-  display: flex;
-}
-
-
 
 p, h1, ul, ol, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -138,7 +137,20 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
   max-width: 435px;
 
 }
+html {
+  //overflow: hidden;
+  //height: 100%;
+}
 
+body {
+  //overflow: auto;
+  //height: 100%;
+  overscroll-behavior: none;
+  scroll-behavior: auto;
+}
+:root {
+  all: initial;
+}
 .house-hover {
 
 }
@@ -292,6 +304,35 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     border-radius: 4px;
   }
+}
+.house-slider {
+  width: 100%;
+  padding: 20px 0 25px 85px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  .swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+  }
+}
+.house-slides {
+  width: 100%;
+  height: 180px;
+}
+.single-house-slide {
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  height: 100%;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
 }
 
 .house-info {
@@ -879,6 +920,8 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
   position: absolute;
   bottom: calc(100% + 7px);
   left: 13px;
+  white-space: nowrap;
+  display: inline-block;
   p {
     font-style: normal;
     font-weight: normal;
@@ -890,6 +933,15 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
     }
   }
 }
+@media screen and (max-width: 1250px) {
+  .house-text p {
+    font-size: 12px;
+  }
+  .single-house-buy .it p {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+}
 @media screen and (max-width: 1050px) {
   .house-buy {
     padding-bottom: 50px;
@@ -897,10 +949,7 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
   .single-house-buy .top {
     height: 320px;
   }
-  .single-house-buy .it p {
-    font-size: 22px;
-    line-height: 1.2;
-  }
+
   .single-house-buy .it span {
     font-size: 12px;
     margin-bottom: 4px;
@@ -938,7 +987,7 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
     font-size: 12px;
     margin-bottom: 6px;
   }
-  .house-bottom {
+  .house-bottom, .house-slider {
     padding: 15px 0 15px 75px;
   }
   .houses {
@@ -965,10 +1014,16 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
   .house-hover {
     display: none;
   }
+
+
+}
+@media screen and (max-width: 1023px) {
   .first-screen.first-screen--house {
     background: url("../img/big-banner-2.jpg") no-repeat center / cover !important;
   }
-
+  .house-slides {
+    height: 140px;
+  }
 }
 @media screen and (max-width: 922px) {
   .single-house-buy .bonus {
@@ -1024,6 +1079,9 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
   }
 }
 @media screen and (max-width: 767px) {
+  .house-slides {
+    height: 105px;
+  }
   .house-top .bonus {
     font-size: 11px;
     line-height: 1.1;
@@ -1129,7 +1187,7 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
   .house-info__text span {
     font-size: 11px;
   }
-  .house-bottom {
+  .house-bottom, .house-slider {
     padding-left: 35px;
   }
   .first-screen.first-screen--house .title-first {
