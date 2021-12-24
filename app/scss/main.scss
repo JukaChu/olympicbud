@@ -307,7 +307,7 @@ body {
 }
 .house-slider {
   width: 100%;
-  padding: 20px 0 25px 85px;
+  padding: 20px 0 20px 85px;
   box-sizing: border-box;
   display: flex;
   align-items: stretch;
@@ -316,6 +316,40 @@ body {
     display: flex;
     align-items: stretch;
     height: 100%;
+  }
+  position: relative;
+}
+.btn-sl {
+  width: 20px;
+  height: 34px;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: border 0.3s ease;
+  &:hover {
+    border: 1px solid #ebebeb;
+    transition: border 0.3s ease;
+
+  }
+  &.swiper-button-disabled {
+    opacity: 0.6;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  &--p {
+    left: 59px;
+    transform: translate(0, -50%) rotate(180deg);
+  }
+  &--n {
+    right: -25px;
+    transform: translate(0, -50%);
   }
 }
 .house-slides {
@@ -943,6 +977,9 @@ body {
   }
 }
 @media screen and (max-width: 1050px) {
+  .btn-sl--n {
+    right: -17px;
+  }
   .house-buy {
     padding-bottom: 50px;
   }
@@ -1102,6 +1139,9 @@ body {
   }
 }
 @media screen and (max-width: 600px) {
+  .btn-sl--p {
+    left: 19px;
+  }
   .single-house-buy .line {
     padding: 10px;
     flex-wrap: wrap;

@@ -207,7 +207,10 @@
                             </div>
 
                         </div>
-
+                    </div>
+                    <div class="btns">
+                        <div class="btn-sl btn-sl--n"><img src="./img/arr-r-b.svg" alt=""></div>
+                        <div class="btn-sl btn-sl--p"><img src="./img/arr-r-b.svg" alt=""></div>
                     </div>
 
                 </div>
@@ -298,7 +301,10 @@
                         </div>
 
                     </div>
-
+                    <div class="btns">
+                        <div class="btn-sl btn-sl--n"><img src="./img/arr-r-b.svg" alt=""></div>
+                        <div class="btn-sl btn-sl--p"><img src="./img/arr-r-b.svg" alt=""></div>
+                    </div>
                 </div>
 
                 <div class="house-bottom">
@@ -631,7 +637,8 @@
         } else {
             rowSlider.forEach((sld) => {
                 let sldCont = sld.querySelector('.house-slides');
-
+                let sldNext = sld.querySelector('.btn-sl--n');
+                let sldPrev = sld.querySelector('.btn-sl--p');
                 const swiper2 = new Swiper(sldCont, {
                     // Optional parameters
                     loop: false,
@@ -639,6 +646,10 @@
                     slidesPerGroup: 1,
                     speed: 600,
                     spaceBetween: 10,
+                    navigation: {
+                        nextEl: sldNext,
+                        prevEl: sldPrev,
+                    },
 
                     autoplay: {
                         delay: 4000,
