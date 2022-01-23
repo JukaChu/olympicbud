@@ -142,6 +142,7 @@ html {
   //height: 100%;
 }
 
+
 body {
   //overflow: auto;
   //height: 100%;
@@ -307,17 +308,71 @@ body {
 }
 .house-slider {
   width: 100%;
-  padding: 20px 0 25px 85px;
+  padding: 20px 0 20px 85px;
   box-sizing: border-box;
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
+  position: relative;
   .swiper-wrapper {
     display: flex;
     align-items: stretch;
     height: 100%;
   }
 }
+.btn-sl {
+  width: 20px;
+  height: 34px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0);
+  -webkit-transition: border .3s ease;
+  -o-transition: border .3s ease;
+  transition: border .3s ease
+}
+
+.btn-sl:hover {
+  border: 1px solid #ebebeb;
+  -webkit-transition: border .3s ease;
+  -o-transition: border .3s ease;
+  transition: border .3s ease
+}
+
+.btn-sl.swiper-button-disabled {
+  opacity: .6
+}
+
+.btn-sl img {
+  width: 100%;
+  height: auto
+}
+
+.btn-sl--p {
+  left: 59px;
+  -webkit-transform: translate(0, -50%) rotate(180deg);
+  -ms-transform: translate(0, -50%) rotate(180deg);
+  transform: translate(0, -50%) rotate(180deg)
+}
+
+.btn-sl--n {
+  right: -25px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%)
+}
+
 .house-slides {
   width: 100%;
   height: 180px;
@@ -396,6 +451,37 @@ body {
       left: 0;
     }
   }
+  .btn-planning {
+    cursor: pointer;
+    font-family: Montserrat,sans-serif;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    img {
+      position: static;
+      width: 21px;
+      height: auto;
+      margin-right: 20px;
+    }
+    &:hover {
+      transition: background-color 0.3s ease;
+      background: rgba(18, 18, 18, 0.24);
+    }
+  }
+
   .location {
     position: absolute;
     top: 20px;
@@ -469,6 +555,7 @@ body {
     }
   }
 }
+
 
 
 .house-build {
@@ -943,6 +1030,9 @@ body {
   }
 }
 @media screen and (max-width: 1050px) {
+  .btn-sl--n {
+    right: -17px
+  }
   .house-buy {
     padding-bottom: 50px;
   }
@@ -1026,6 +1116,15 @@ body {
   }
 }
 @media screen and (max-width: 922px) {
+  .house-top .btn-planning {
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.1;
+    img {
+      width: 17px;
+      margin-right: 10px;
+    }
+  }
   .single-house-buy .bonus {
     font-size: 12px;
     line-height: 1.1;
@@ -1102,6 +1201,10 @@ body {
   }
 }
 @media screen and (max-width: 600px) {
+  .btn-sl--p {
+    left: 19px
+  }
+
   .single-house-buy .line {
     padding: 10px;
     flex-wrap: wrap;
