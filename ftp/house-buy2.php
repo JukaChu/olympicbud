@@ -4,10 +4,10 @@
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T79VNQT');</script>
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T79VNQT');</script>
     <!-- End Google Tag Manager -->
 
 
@@ -40,7 +40,6 @@
 
 <body>
 
-
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T79VNQT"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -69,7 +68,7 @@
                             <span class="icon-Phones"></span>
                             <div style="display: inline-block;">
                                 <a href="tel:+380971185207">+38 (097) 118-52-07</a><br
-                                    style="display: block !important;">
+                                        style="display: block !important;">
                                 <a href="tel:+380632666804">+38 (063) 266-68-04</a>
                             </div>
                         </div>
@@ -167,8 +166,8 @@
                         <div class="location">
                             с. Бобрица
                         </div>
-                        <div class="btn-planning h-1" data-fancybox="image" href="./img/h-plan-1.png">
-                            <img src="./img/plan-svg.svg" alt=""> Планировка
+                        <div class="bonus">
+                            + бонус room 60 м<sup>2</sup>
                         </div>
                     </div>
                     <div class="map-local">
@@ -273,9 +272,7 @@
                         <div class="location">
                             с. Бобрица
                         </div>
-                        <div class="btn-planning" data-fancybox="image" href="./img/h-plan-2.png">
-                            <img src="./img/plan-svg.svg" alt=""> Планировка
-                        </div>
+
                     </div>
                     <div class="map-local">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1070.3881106920721!2d30.179552072423817!3d50.351144824436304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472b4b2d1c83cdef%3A0x8e68532dbea541f5!2z0JHQvtCx0YDQuNGG0Y8sINCa0LjRl9Cy0YHRjNC60LAg0L7QsdC7LiwgMDgxNDI!5e0!3m2!1suk!2sua!4v1639826744365!5m2!1suk!2sua"
@@ -540,16 +537,16 @@
                 <input type="hidden" name="formname" value="test">
                 <div class="inputs_form">
                     <div class="main-input" style="margin-bottom: 15px;"><span class="icon-Woman"></span><input
-                            class="main-input__inner" type="text"
-                            placeholder="Назва" name="yourItem" required>
+                                class="main-input__inner" type="text"
+                                placeholder="Назва" name="yourItem" required>
                     </div>
                     <div class="main-input" style="margin-bottom: 15px;"><span class="icon-Woman"></span><input
-                            class="main-input__inner" type="text"
-                            placeholder="Ваше імя" name="yourName" required>
+                                class="main-input__inner" type="text"
+                                placeholder="Ваше імя" name="yourName" required>
                     </div>
                     <div class="main-input"><span class="icon-Phones"></span><input
-                            class="main-input__inner" type="tel" id="tel"
-                            placeholder="+380 (**) *** ** **" name="yourPhone" required>
+                                class="main-input__inner" type="tel" id="tel"
+                                placeholder="+380 (**) *** ** **" name="yourPhone" required>
                     </div>
                     <button class="btn_quiz btn" name="sendForm2" type="submit">Відправити
                     </button>
